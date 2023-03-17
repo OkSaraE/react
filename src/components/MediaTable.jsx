@@ -1,13 +1,19 @@
-import PropTypes from 'prop-types';
 import {useEffect, useState} from 'react';
+import {baseUrl} from '../utils/variables';
 import MediaRow from './Mediarow';
 
 const MediaTable = () => {
   const [mediaArray, setMeadiaArray] = useState([]);
   const getMedia = async () => {
-    const response = await fetch('test.json');
-    const json = await response.json();
-    setMeadiaArray(json);
+    const response = await fetch(baseUrl + 'media');
+    const files = await response.json();
+    const filesWithThumbnail = await Promise.all(
+      files.map(async (file) => {
+        const response = await fetch(baseUrl + 'media/' + file.file_id);
+        return await response.json();
+      })
+    );
+    setMeadiaArray(filesWithThumbnail);
   };
 
   useEffect(() => {
