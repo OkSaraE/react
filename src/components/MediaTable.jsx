@@ -1,4 +1,4 @@
-import {useMedia} from '../../hooks/apiHooks';
+import {useMedia} from '../hooks/apiHooks';
 import MediaRow from './Mediarow';
 
 const MediaTable = () => {
