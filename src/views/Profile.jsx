@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {useUser} from '../../hooks/apiHooks';
+import {useUser} from '../hooks/apiHooks';
 
 const Profile = () => {
   const [user, setUser] = useState({});
