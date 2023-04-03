@@ -3,6 +3,8 @@ import {useNavigate} from 'react-router-dom';
 import {MediaContext} from '../contexts/MediaContexts';
 import {useAuthentication} from '../hooks/apiHooks';
 import useForm from '../hooks/FormHooks';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const LoginForm = (props) => {
   const {setUser} = useContext(MediaContext);
@@ -33,20 +35,28 @@ const LoginForm = (props) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input
+        <TextField
+          fullWidth
+          margin="dense"
+          variant="filled"
           name="username"
           placeholder="Username"
           onChange={handleInputChange}
           value={inputs.username}
         />
-        <input
+        <TextField
+          fullWidth
+          margin="dense"
+          variant="filled"
           name="password"
           type="password"
           placeholder="Password"
           onChange={handleInputChange}
           value={inputs.password}
         />
-        <button type="submit">Login</button>
+        <Button fullWidth sx={{mt: 2}} variant="contained" type="submit">
+          Login
+        </Button>
       </form>
     </>
   );
