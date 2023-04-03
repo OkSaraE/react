@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/~saraok/Mediapalvelut/react/forms",
+    "build": "vite build --base=/~saraok/Mediapalvelut/react/mui",
     "preview": "vite preview"
   },
   "dependencies": {

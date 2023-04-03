@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import useForm from '../hooks/FormHooks';
 import {useUser} from '../hooks/ApiHooks';
+import {Button, TextField} from '@mui/material';
 
 const RegisterForm = (props) => {
   const {postUser, getCheckUser} = useUser();
@@ -34,34 +35,48 @@ const RegisterForm = (props) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input
+        <TextField
+          fullWidth
+          margin="dense"
+          variant="filled"
           name="username"
           placeholder="Username"
           onChange={handleInputChange}
           value={inputs.username}
           onBlur={handleUsername}
         />
-        <input
+        <TextField
+          fullWidth
+          margin="dense"
+          variant="filled"
           name="password"
           type="password"
           placeholder="Password"
           onChange={handleInputChange}
           value={inputs.password}
         />
-        <input
+        <TextField
+          fullWidth
+          margin="dense"
+          variant="filled"
           name="email"
           type="email"
           placeholder="Email"
           onChange={handleInputChange}
           value={inputs.email}
         />
-        <input
+        <TextField
+          fullWidth
+          margin="dense"
+          variant="filled"
           name="full_name"
           placeholder="Full name"
           onChange={handleInputChange}
           value={inputs.full_name}
         />
-        <button type="submit">Register</button>
+        <Button fullWidth sx={{mt: 2}} variant="contained" type="submit">
+          Register
+        </Button>
       </form>
     </>
   );
