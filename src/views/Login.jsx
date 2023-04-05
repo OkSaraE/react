@@ -17,7 +17,7 @@ const Login = (props) => {
         </Typography>
       </Grid>
       <Grid item xs={8}>
-        {formToggle ? <LoginForm /> : <RegisterForm />}
+        {formToggle ? <LoginForm /> : <RegisterForm toggle={toggle} />}
       </Grid>
       <Grid item xs={8}>
         <p>{formToggle ? 'First time here?' : 'or'}</p>
