@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/~saraok/Mediapalvelut/react/validator",
+    "build": "vite build --base=/~saraok/Mediapalvelut/react/upload",
     "preview": "vite preview"
   },
   "dependencies": {
