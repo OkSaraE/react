@@ -5,26 +5,22 @@ import {mediaUrl} from '../utils/variables';
 const Single = () => {
   const {state} = useLocation();
   const file = state.file;
-  let allData ={
-    description:file.description,
-    filters:{
+  let allData = {
+    description: file.description,
+    filters: {
       brightness: 100,
       contrast: 100,
       saturation: 100,
       sepia: 0,
-    }
-  }
-  try{
-    const allData = JSON.parse(file.description);
-  }catch(error){
-
+    },
   };
-
-
+  try {
+    const allData = JSON.parse(file.description);
+  } catch (error) {}
 
   return (
     <>
-      <Typography component="h1" variant="h2">
+      <Typography component="h1" variant="h3">
         {file.title}
       </Typography>
       <Card>
@@ -33,16 +29,18 @@ const Single = () => {
           src={mediaUrl + file.filename}
           title={file.title}
           style={{
-            width: 300,
-            height: 200,
-            filter: `brightness(${allData.filters.brightness}%)
+            width: '100%',
+            height: 400,
+            filter: `
+            brightness(${allData.filters.brightness}%)
             contrast(${allData.filters.contrast}%)
             saturate(${allData.filters.saturation}%)
-            sepia(${allData.filters.sepia}%)`,
-          }
+            sepia(${allData.filters.sepia}%)
+            `,
+          }}
         />
         <CardContent>
-          <Typography variant="body1">{allData.description}</Typography>
+          <Typography variant="body1">{allData.desc}</Typography>
         </CardContent>
       </Card>
     </>
