@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import useForm from '../hooks/FormHooks';
 import {useUser} from '../hooks/ApiHooks';
-import {Box, Button, TextField} from '@mui/material';
+import {Button} from '@mui/material';
 import {ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import {registerForm} from '../utils/errorMessages';
 import {registerValidator} from '../utils/validators';
@@ -27,11 +27,6 @@ const RegisterForm = ({toggle}) => {
     } catch (error) {
       alert(error.message);
     }
-  };
-
-  const handleUsername = async () => {
-    const {available} = await getCheckUser(inputs.username);
-    available || alert('Username not available');
   };
 
   const {inputs, handleSubmit, handleInputChange} = useForm(
